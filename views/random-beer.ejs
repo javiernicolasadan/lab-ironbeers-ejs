@@ -1,0 +1,26 @@
+<div>
+    <h2>RANDOM BEER</h2>
+    <!-- way one -->
+   <!-- <img src="<%- randomBeer[0].image_url %>"/>
+   <h2><%- randomBeer[0].name %></h2>
+   <h3><%- randomBeer[0].description %></h3>
+   <h3><%- randomBeer[0].tagline %></h3>
+   <h3>Food Pairing:</h3>
+   <% randomBeer[0].food_pairing.forEach ((foodPairing) => { %>
+    <h4><li><%- foodPairing %></li></h4>
+   <% }) %> 
+   <h3><%- randomBeer[0].brewers_tips %></h3> -->
+
+  <!--  way two -->
+   <% randomBeer.forEach((beer) => { %> 
+    <h2><%- include('./partials/beer.ejs', {beer}) %></h2>
+   
+    <div class="beers">
+        <h2>Food Pairing:</h2>
+        <% beer.food_pairing.forEach((foodPairing) => { %>
+            <h3><li><%- foodPairing%></li></h3>
+        <% }) %> 
+        <h2><%- beer.brewers_tips %></h2>       
+    </div>
+
+   <% }) %>
